@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+if [ -z "$ZETTLEKASTEN_PATH" ]; then
+	echo "ZETTLEKASTEN_PATH not set!"
+	exit 1
+fi
+
+cd "$ZETTLEKASTEN_PATH"
+
+HAS_CHANGES="$(git status --porcelain | wc -l)"
+
+if [ "$HAS_CHANGES" -eq 0 ]; then
+    exit 0
+fi
+
+git pull -q
+git add .
+git commit -q -m "Automatic sync: $(date +"%Y-%m-%d %H:%M:%S %z")"
+git push -q
