@@ -1,0 +1,11 @@
+- Hard link the main dot files
+- apt-get update && apt-get upgrade
+- Install:
+    - RBenv for Ruby:
+        - sudo apt install rbenv
+        - curl -fsSL https://github.com/rbenv/rbenv-installer/raw/HEAD/bin/rbenv-installer | bash
+    - Dotnet core using the install script at https://dot.net/v1/dotnet-install.sh
+    - Docker rootless
+- Create an SSH key
+- Pull Zettlekasten repo
+- Add SSH key to GitHub
